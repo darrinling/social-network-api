@@ -18,7 +18,7 @@ const thoughtSchema = new Schema (
     },
     reactions: [reactionSchema],
   }
-}
+};
 
 const reactionSchema = new Schema (
   {
@@ -40,7 +40,7 @@ const reactionSchema = new Schema (
       default: Date.now,
     },
   }
-}
+};
 
 thoughtSchema.virtual('reactionCount')
 .get(function() {
