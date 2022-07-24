@@ -69,18 +69,7 @@ const thoughtController = {
           res.status(500).json({ message: "No thought matched with this ID!" });
           return;
         }
-        return User.findOneAndUpdate(
-          { thoughts: req.params.thoughtId },
-          { $pull: { thoughts: req.params.thoughtId } },
-          { new: true }
-        );
-      })
-      .then((user) => {
-        if (!user) {
-          res.status(500).json({ message: "No user matched with this ID!" });
-          return;
-        }
-        res.status(200).json(thought);
+        res.status(200).json({ message: "Deleted thought!" });
       })
       .catch((err) => {
         console.log(err);
